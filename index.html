@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock and Stopwatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg"><span></span><span></span><span></span><span></span><span></span></div>
+  <main class="container">
+    <h1 class="title">Time<span>Lab</span></h1>
+    <p id="greeting" class="greeting">Hello!</p>
+    <div class="grid">
+      <section class="card">
+        <h2 class="card-title">Current Time</h2>
+        <div class="analog">
+          <div class="hand hour" id="hourHand"></div>
+          <div class="hand minute" id="minuteHand"></div>
+          <div class="hand second" id="secondHand"></div>
+          <div class="center-dot"></div>
+        </div>
+        <div class="display" id="clock">00:00<span class="sec">:00</span> <small>AM</small></div>
+        <p id="date" class="date">Loading date...</p>
+      </section>
+      <section class="card">
+        <h2 class="card-title">Stopwatch</h2>
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 200 200">
+            <circle class="ring-bg" cx="100" cy="100" r="90"></circle>
+            <circle class="ring-progress" id="ring" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="ring-text"><div id="stopwatch" class="sw-time">00:00:00</div><div id="ms" class="sw-ms">.00</div></div>
+        </div>
+        <p id="status" class="status">Ready</p>
+        <div class="buttons">
+          <button id="startBtn" class="btn btn-start">▶ Start</button>
+          <button id="stopBtn" class="btn btn-stop" disabled>⏸ Stop</button>
+          <button id="lapBtn" class="btn btn-lap" disabled>⚑ Lap</button>
+          <button id="resetBtn" class="btn btn-reset" disabled>↺ Reset</button>
+        </div>
+        <ul id="laps" class="laps"></ul>
+      </section>
+    </div>
+    <p class="hint">Shortcuts: <kbd>Space</kbd> start/stop · <kbd>L</kbd> lap · <kbd>R</kbd> reset</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
